@@ -9,8 +9,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import ReduxToastr from 'react-redux-toastr';
+import NavBar from 'components/NavBar/index';
 
 import 'semantic-ui-css/semantic.css';
+import 'react-redux-toastr/src/styles/index.scss';
 
 
 const AppWrapper = styled.div`
@@ -31,6 +34,16 @@ function App(props) {
           { name: 'description', content: 'A React.js Boilerplate application' },
         ]}
       />
+      <ReduxToastr
+        timeOut={4000}
+        newestOnTop={false}
+        preventDuplicates
+        position="top-right"
+        transitionIn="fadeIn"
+        transitionOut="fadeOut"
+        progressBar
+      />
+      <NavBar />
       {React.Children.toArray(props.children)}
     </AppWrapper>
   );

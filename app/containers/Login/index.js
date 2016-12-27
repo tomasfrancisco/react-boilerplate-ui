@@ -13,6 +13,7 @@ import messages from './messages';
 
 import styled from 'styled-components';
 import { Button, Card, Container, Form } from 'semantic-ui-react';
+import { toastr } from 'react-redux-toastr';
 
 const LoginWrapper = styled.div`
   height: 100%;
@@ -21,6 +22,10 @@ const LoginWrapper = styled.div`
 `;
 
 export class Login extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  componentDidMount() {
+    toastr.success('The title', 'The message');
+  }
+
   render() {
     const { formatMessage } = this.props.intl;
 

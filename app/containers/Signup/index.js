@@ -8,8 +8,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import selectSignup from './selectors';
-// import { FormattedMessage } from 'react-intl';
-// import messages from './messages';
+import { FormattedMessage, injectIntl } from 'react-intl';
+import messages from './messages';
 
 import styled from 'styled-components';
 import { Button, Card, Container, Form } from 'semantic-ui-react';
@@ -34,14 +34,16 @@ export class Signup extends React.Component { // eslint-disable-line react/prefe
           <Card centered>
             <Card.Content>
               <Card.Header>
-                Create new account
+                <FormattedMessage {...messages.header} />
               </Card.Header>
             </Card.Content>
             <Card.Content>
               <Form>
                 <Form.Input placeholder="E-Mail" />
                 <Form.Input placeholder="Password" type="password" />
-                <Button type="submit" color="teal" fluid>Submit</Button>
+                <Button type="submit" color="teal" fluid>
+                  <FormattedMessage {...messages.submitButton} />
+                </Button>
               </Form>
             </Card.Content>
           </Card>
@@ -59,4 +61,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default injectIntl(connect(mapStateToProps, mapDispatchToProps)(Signup));

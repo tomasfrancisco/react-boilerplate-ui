@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import HomeHeader from 'components/HomeHeader/index';
-import NavBar from 'components/NavBar';
 import Footer from 'components/Footer';
 
 const HomePageWrapper = styled.div`
@@ -26,7 +25,6 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
             { name: 'description', content: 'A React.js Boilerplate application homepage' },
           ]}
         />
-        <NavBar />
         <HomeHeader />
         <Footer />
       </HomePageWrapper>
