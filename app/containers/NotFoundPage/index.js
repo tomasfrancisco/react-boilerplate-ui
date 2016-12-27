@@ -6,16 +6,30 @@
 
 import React from 'react';
 
+import styled from 'styled-components';
 import messages from './messages';
+import { Icon, Message } from 'semantic-ui-react';
 import { FormattedMessage } from 'react-intl';
-import H1 from 'components/H1';
 
-export default function NotFound() {
+const NotFoundPageWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  padding: 0 10%;
+`;
+
+export default function NotFoundPage() {
   return (
-    <article>
-      <H1>
-        <FormattedMessage {...messages.header} />
-      </H1>
-    </article>
+    <NotFoundPageWrapper>
+      <Message color="yellow" compact icon>
+        <Icon name="warning sign" />
+        <Message.Content>
+          <Message.Header>
+            <FormattedMessage {...messages.header} />
+          </Message.Header>
+          <FormattedMessage {...messages.description} />
+        </Message.Content>
+      </Message>
+    </NotFoundPageWrapper>
   );
 }

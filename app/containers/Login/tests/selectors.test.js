@@ -4,7 +4,7 @@
 
 // const selector = selectLoginDomain();
 
-describe('selectAppDomain', () => {
+describe('selectLoginDomain', () => {
   // it('Expect to have unit tests specified', () => {
   //   expect('Test case').toEqual(false);
   // });

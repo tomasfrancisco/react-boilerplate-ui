@@ -1,31 +1,13 @@
-/**
- * The global state selectors
- */
-
 import { createSelector } from 'reselect';
 
-const selectGlobal = () => (state) => state.get('global');
+/**
+ * Direct selector to the login state domain
+ */
+const selectAppDomain = () => (state) => state.get('app');
 
-const selectCurrentUser = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('currentUser')
-);
-
-const selectLoading = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('loading')
-);
-
-const selectError = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.get('error')
-);
-
-const selectRepos = () => createSelector(
-  selectGlobal(),
-  (globalState) => globalState.getIn(['userData', 'repositories'])
-);
-
+/**
+ * Other specific selectors
+ */
 const selectLocationState = () => {
   let prevRoutingState;
   let prevRoutingStateJS;
@@ -42,11 +24,18 @@ const selectLocationState = () => {
   };
 };
 
+
+/**
+ * Default selector used by App
+ */
+
+const selectApp = () => createSelector(
+  selectAppDomain(),
+  (substate) => substate.toJS()
+);
+
+export default selectApp;
 export {
-  selectGlobal,
-  selectCurrentUser,
-  selectLoading,
-  selectError,
-  selectRepos,
+  selectAppDomain,
   selectLocationState,
 };

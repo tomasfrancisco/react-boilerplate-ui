@@ -1,10 +1,10 @@
-// import { selectLoginDomain } from '../selectors';
+// import { selectSignupDomain } from '../selectors';
 // import { fromJS } from 'immutable';
 // import expect from 'expect';
 
-// const selector = selectLoginDomain();
+// const selector = selectSignupDomain();
 
-describe('selectAppDomain', () => {
+describe('selectSignupDomain', () => {
   // it('Expect to have unit tests specified', () => {
   //   expect('Test case').toEqual(false);
   // });

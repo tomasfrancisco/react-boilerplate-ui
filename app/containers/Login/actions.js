@@ -1,6 +1,6 @@
 /*
  *
- * App actions
+ * Login actions
  *
  */
 

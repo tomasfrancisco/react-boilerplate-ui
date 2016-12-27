@@ -8,6 +8,10 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   header: {
     id: 'boilerplate.containers.NotFoundPage.header',
-    defaultMessage: 'Page not found.',
+    defaultMessage: 'Page not found',
+  },
+  description: {
+    id: 'boilerplage.containers.NotFoundPage.description',
+    defaultMessage: 'The page you are looking for doesn\'t exist.',
   },
 });

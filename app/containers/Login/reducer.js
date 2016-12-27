@@ -1,6 +1,6 @@
 /*
  *
- * App reducer
+ * Login reducer
  *
  */
 

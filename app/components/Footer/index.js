@@ -1,29 +1,25 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { Container, Divider } from 'semantic-ui-react';
 
-import A from 'components/A';
-import LocaleToggle from 'containers/LocaleToggle';
-import Wrapper from './Wrapper';
+import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 
 function Footer() {
   return (
-    <Wrapper>
-      <section>
-        <FormattedMessage {...messages.licenseMessage} />
-      </section>
-      <section>
-        <LocaleToggle />
-      </section>
-      <section>
-        <FormattedMessage
-          {...messages.authorMessage}
-          values={{
-            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
-          }}
-        />
-      </section>
-    </Wrapper>
+    <div>
+      <Divider />
+      <Container textAlign="center">
+        <p>
+          <FormattedMessage
+            {...messages.authorMessage}
+            values={{
+              author: <a href="https://twitter.com/ttomasfrancisco" target="_blank">Tomás Francisco</a>,
+            }}
+          />
+        </p>
+      </Container>
+      <Divider hidden />
+    </div>
   );
 }
 
